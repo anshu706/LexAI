@@ -87,7 +87,7 @@ app.post('/api/analyze', async (req, res) => {
       }
     });
 
-    res.json(JSON.parse(response.text() || '{}'));
+    res.json(JSON.parse(response.text || '{}'));
   } catch (err: any) {
     console.error(err);
     res.status(500).json({ error: err.message || 'Internal server error' });
@@ -114,7 +114,7 @@ app.post('/api/chat', async (req, res) => {
       }
     });
 
-    res.json({ answer: response.text() });
+    res.json({ answer: response.text });
   } catch (err: any) {
     console.error(err);
     res.status(500).json({ error: err.message || 'Internal server error' });
