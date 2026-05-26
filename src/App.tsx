@@ -23,7 +23,13 @@ export default function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ documentText: text })
       });
-      const data = await res.json();
+      const textRes = await res.text();
+      let data;
+      try {
+        data = JSON.parse(textRes);
+      } catch (e) {
+        throw new Error("Backend API unavailable. Note: Document analysis requires the local Express server and does not work on static hosts like GitHub Pages.");
+      }
       if (!res.ok) throw new Error(data.error || 'Failed to analyze');
       setAnalysisResult(data);
     } catch (err: any) {

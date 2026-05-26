@@ -35,7 +35,15 @@ export function DocumentChat({ documentText }: { documentText: string }) {
         body: JSON.stringify({ documentText, question: userMessage })
       });
       
-      const data = await res.json();
+      const textRes = await res.text();
+      let data;
+      try {
+        data = JSON.parse(textRes);
+      } catch (e) {
+        setMessages(prev => [...prev, { role: 'ai', text: "Backend API unavailable. Note: Document chat requires the local Express server and does not work on static hosts like GitHub Pages." }]);
+        return;
+      }
+      
       if (res.ok) {
         setMessages(prev => [...prev, { role: 'ai', text: data.answer }]);
       } else {
