@@ -1,9 +1,4 @@
 <div align="center">
-  <img src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" alt="Google AI Banner" width="100%" />
-
-  <br />
-  <br />
-
   <h1>The LEX AI ⚖️</h1>
   
   <p>
@@ -28,7 +23,7 @@ It acts as your personal AI legal assistant—giving you clarity and confidence 
 ## ✨ Key Features
 
 - **📄 Seamless Document Parsing:** Upload PDF documents or paste contract text directly.
-- **🧠 Gemini AI Powered:** Built on Google's blazing-fast `gemini-2.5-flash` model for instant analysis.
+- **🧠 LLM Powered:** Built on the `gemini-2.5-flash` model for instant analysis.
 - **🚨 Risk Level Highlighting:** Categorizes clauses into `CRITICAL`, `WARNING`, and `FINE` to quickly identify predatory terms.
 - **💡 Plain English Explanations:** Strips away the legalese and explains exactly what a clause means and why it matters.
 - **💬 Conversational Interface:** Chat directly with your document to ask specific questions about the terms.
@@ -45,7 +40,7 @@ It acts as your personal AI legal assistant—giving you clarity and confidence 
 
 ### Backend
 - **Node.js & Express:** Lightweight backend to handle API routing and file processing securely.
-- **Google GenAI SDK:** Direct integration with Google's state-of-the-art Gemini LLMs.
+- **GenAI SDK:** Direct integration with Gemini LLMs.
 
 ---
 
