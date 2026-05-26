@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import { GoogleGenAI, Type, Schema } from '@google/genai';
 import path from 'path';
@@ -136,9 +137,18 @@ async function startServer() {
     });
   }
 
-  const PORT = 3000;
-  app.listen(PORT, '0.0.0.0', () => {
+  const PORT = Number(process.env.PORT) || 3000;
+  const server = app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
+  });
+
+  server.on('error', (e: any) => {
+    if (e.code === 'EADDRINUSE') {
+      console.log(`Port ${PORT} is in use, trying ${PORT + 1}`);
+      app.listen(PORT + 1, '0.0.0.0', () => {
+        console.log(`Server running on port ${PORT + 1}`);
+      });
+    }
   });
 }
 
