@@ -38,7 +38,7 @@ export default function App() {
       setIsAnalyzing(false);
     }
   };
-
+ 
   const handleReset = () => {
     setDocumentText('');
     setAnalysisResult(null);
