@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "predeploy": "vite build",
+    "predeploy": "vite build --base=/LexAI/",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
