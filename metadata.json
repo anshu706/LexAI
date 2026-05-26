@@ -1,0 +1,6 @@
+{
+  "name": "LexAI",
+  "description": "LexAI is an expert AI legal document analyst that provides clarity and structured summaries of legal agreements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
